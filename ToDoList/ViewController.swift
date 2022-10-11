@@ -1,9 +1,5 @@
-//
 //  ViewController.swift
-//  Tasks
-//
 //  Created by mustafa deveci on 9.10.2022.
-//
 
 import UIKit
 
