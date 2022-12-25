@@ -68,6 +68,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if let items = UserDefaults.standard.stringArray(forKey: "items") {
+                var currentItems = items
+                currentItems.remove(at: indexPath.row)
+                UserDefaults.standard.setValue(currentItems, forKey: "items")
+            }
             items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
